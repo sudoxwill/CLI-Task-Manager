@@ -1,44 +1,83 @@
-# Gestionnaire de tâches CLI
+# Task Manager CLI
 
-Une application de gestion de tâches en ligne de commande développée en Dart pur.
+A simple command-line task management application built with pure Dart.
 
-## Fonctionnalités
+## Features
 
-- Ajouter une tâche
-- Lister toutes les tâches
-- Trier les tâches par priorité ou par date
-- Marquer une tâche comme terminée
-- Supprimer une tâche
-- Sauvegarder et charger les tâches à partir d'un fichier JSON local
+- Add a task
+- List all tasks
+- Sort tasks by priority or due date
+- Mark a task as completed
+- Delete a task
+- Save and load tasks from a local JSON file
 
-## Prérequis
+## Requirements
 
-- Dart SDK 3.x ou version ultérieure
+- Dart SDK 3.x or later
 
-## Installer les dépendances
+Check your Dart version:
+
+```bash
+dart --version
+```
+
+## Install dependencies
 
 ```bash
 dart pub get
 ```
 
-## Lancer l'application
+## Run the application
 
-Depuis la racine du projet, exécutez :
+From the project root, execute:
 
 ```bash
 dart run
 ```
 
-## Exécuter les tests
+or, if your entry point is inside `bin`:
 
-Pour lancer tous les tests unitaires :
+```bash
+dart run bin/main.dart
+```
+
+## Run the tests
+
+Execute all unit tests with:
 
 ```bash
 dart test
 ```
 
-Pour exécuter un fichier de test spécifique :
+To run a specific test file:
 
 ```bash
 dart test test/task_manager_test.dart
 ```
+
+## Project structure
+
+```
+bin/
+    main.dart
+
+lib/
+    models/
+    services/
+    repositories/
+    exceptions/
+
+test/
+    task_manager_test.dart
+```
+
+## Technologies
+
+- Dart
+- dart:io
+- JSON serialization
+- package:test
+
+## Author
+
+Developed as a Dart object-oriented programming practice project.
