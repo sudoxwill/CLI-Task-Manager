@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:intl/intl.dart';
-import 'package:task_manager/task.dart';
-import 'package:task_manager/task_manager.dart';
-import 'package:task_manager/task_manager_impl.dart';
+import 'package:task_manager/models/task.dart';
+import 'package:task_manager/repositories/task_manager.dart';
+import 'package:task_manager/repositories/task_manager_impl.dart';
 
 class MenuHelper {
   final TaskManagerImpl taskManagerImpl;

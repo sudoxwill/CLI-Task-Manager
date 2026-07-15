@@ -1,4 +1,4 @@
-import 'package:task_manager/task.dart';
+import 'package:task_manager/models/task.dart';
 
 enum TaskFilterType { byDefault, byPriority, byDate }
 

@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:task_manager/task.dart';
-import 'package:task_manager/task_exceptions.dart';
-import 'package:task_manager/task_manager.dart';
+import 'package:task_manager/models/task.dart';
+import 'package:task_manager/exceptions/task_exceptions.dart';
+import 'package:task_manager/repositories/task_manager.dart';
 
 class TaskManagerImpl implements TaskManager<Task> {
   List<Task> _tasks = [];
