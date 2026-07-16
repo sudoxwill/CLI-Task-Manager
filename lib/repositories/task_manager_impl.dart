@@ -62,6 +62,7 @@ class TaskManagerImpl implements TaskManager<Task> {
 
       if (!await file.exists()) {
         _tasks = [];
+        return;
       }
 
       final String stringList = await file.readAsString();
