@@ -55,21 +55,6 @@ To run a specific test file:
 dart test test/task_manager_test.dart
 ```
 
-## Project structure
-
-```
-bin/
-    main.dart
-
-lib/
-    models/
-    services/
-    repositories/
-    exceptions/
-
-test/
-    task_manager_test.dart
-```
 
 ## Technologies
 
