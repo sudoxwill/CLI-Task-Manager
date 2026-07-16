@@ -1,1 +1,2 @@
-[{"title":"Task 2","priority":"medium","date":"11/04/2000","is_done":0},{"title":"Task 3","priority":"high","date":"12/04/2000","is_done":1},{"title":"Task 4","priority":"high","date":"13/04/2000","is_done":0}]
+[{"title":"Task 2","priority":"medium","date":"11/04/0000","is_done":false},{"title":"Task 3","priority":"high","date":"12/04/2000","is_done":true},{"title":"Task 4","priority":"high","date":"13/04/2000","is_done":false}]
+

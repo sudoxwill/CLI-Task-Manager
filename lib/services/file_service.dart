@@ -30,10 +30,10 @@ class FileService {
       }
 
       final String stringList = await file.readAsString();
-
       final List<dynamic> jsonList = jsonDecode(stringList);
-
-      taskManagerImpl.initTasks(jsonList.map((e) => Task.fromJson(e)).toList());
+      final List<Task> tasks = jsonList.map((e) => Task.fromJson(e)).toList();
+      print(tasks);
+      taskManagerImpl.initTasks(tasks);
     } catch (e) {
       print('L\'application ne s\'est pas bien lancée. Relance!');
     }
