@@ -1,10 +1,12 @@
-import 'package:task_manager/services/menu_helper.dart';
-import 'package:task_manager/repositories/task_manager_impl.dart';
+import 'package:task_manager/helpers/menu_helper.dart';
+import 'package:task_manager/managers/task_manager_impl.dart';
+import 'package:task_manager/services/file_service.dart';
 
 void main() async {
-  final taskManager = TaskManagerImpl();
-  final menuHelper = MenuHelper(taskManager);
-  await taskManager.loadAllfromJson();
+  final taskManagerImpl = TaskManagerImpl();
+  final fileService = FileService(taskManagerImpl);
+  final menuHelper = MenuHelper(taskManagerImpl);
+  await fileService.loadAllfromJson();
   menuHelper.defaultMenu();
   menuHelper.snapAndDisplayDefaultMenu();
 }

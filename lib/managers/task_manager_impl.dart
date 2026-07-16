@@ -1,8 +1,6 @@
-import 'dart:convert';
-import 'dart:io';
 import 'package:task_manager/models/task.dart';
-import 'package:task_manager/exceptions/task_exceptions.dart';
-import 'package:task_manager/repositories/task_manager.dart';
+import 'package:task_manager/exceptions/task_range_exceptions.dart';
+import 'package:task_manager/managers/task_manager.dart';
 
 class TaskManagerImpl implements TaskManager<Task> {
   List<Task> _tasks = [];
@@ -42,36 +40,7 @@ class TaskManagerImpl implements TaskManager<Task> {
   }
 
   @override
-  saveAllToJson() async {
-    try {
-      final File file = File('tasks.json');
-      final List<Map<String, dynamic>> jsonList = _tasks
-          .map((e) => e.toJson())
-          .toList();
-      final String stringList = jsonEncode(jsonList);
-      await file.writeAsString(stringList);
-    } catch (e) {
-      print('Les données n\'ont pas été enregistrées. Reéssaye!');
-    }
-  }
-
-  @override
-  loadAllfromJson() async {
-    try {
-      final File file = File('tasks.json');
-
-      if (!await file.exists()) {
-        _tasks = [];
-        return;
-      }
-
-      final String stringList = await file.readAsString();
-
-      final List<dynamic> jsonList = jsonDecode(stringList);
-
-      _tasks = jsonList.map((e) => Task.fromJson(e)).toList();
-    } catch (e) {
-      print('L\'application ne s\'est pas bien lancée. Relance!');
-    }
+  void initTasks(List<Task> tasks) {
+    _tasks = tasks;
   }
 }

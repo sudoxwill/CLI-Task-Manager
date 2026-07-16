@@ -1,8 +1,10 @@
 import 'dart:io';
 import 'package:intl/intl.dart';
+import 'package:task_manager/models/base_task.dart';
 import 'package:task_manager/models/task.dart';
-import 'package:task_manager/repositories/task_manager.dart';
-import 'package:task_manager/repositories/task_manager_impl.dart';
+import 'package:task_manager/managers/task_manager.dart';
+import 'package:task_manager/managers/task_manager_impl.dart';
+import 'package:task_manager/services/file_service.dart';
 
 class MenuHelper {
   final TaskManagerImpl taskManagerImpl;
@@ -43,6 +45,7 @@ class MenuHelper {
   }
 
   void areYouSureMenu() async {
+    final fileService = FileService(taskManagerImpl);
     print('*****************************************');
     print('*                                       *');
     print('*     Tu veux vraiment quitter ?        *');
@@ -58,7 +61,7 @@ class MenuHelper {
     switch (input) {
       case '1':
         print('-----------------------------------------');
-        await taskManagerImpl.saveAllToJson();
+        await fileService.saveAllToJson();
         print('Au revoir...');
         exit(0);
 

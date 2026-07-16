@@ -1,19 +1,5 @@
 import 'package:intl/intl.dart';
-
-enum PriorityType { low, medium, high }
-
-abstract class BaseTask {
-  String title;
-  PriorityType priority;
-  bool isDone;
-  DateTime? date;
-  BaseTask({
-    required this.title,
-    required this.priority,
-    this.isDone = false,
-    this.date,
-  });
-}
+import 'package:task_manager/models/base_task.dart';
 
 class Task extends BaseTask {
   Task({
@@ -28,13 +14,13 @@ class Task extends BaseTask {
     date: json['date'] == null
         ? null
         : DateFormat('dd/MM/yyyy').parse(json['date']),
-    isDone: json['is_done'] == 1 ? true : false,
+    isDone: json['is_done'],
   );
 
   Map<String, dynamic> toJson() => {
     'title': title,
     'priority': priority.name,
     'date': date == null ? null : DateFormat('dd/MM/yyyy').format(date!),
-    'is_done': isDone == true ? 1 : 0,
+    'is_done': isDone,
   };
 }

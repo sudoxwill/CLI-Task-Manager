@@ -1,7 +1,8 @@
+import 'package:task_manager/models/base_task.dart';
 import 'package:task_manager/models/task.dart';
-import 'package:task_manager/exceptions/task_exceptions.dart';
-import 'package:task_manager/repositories/task_manager.dart';
-import 'package:task_manager/repositories/task_manager_impl.dart';
+import 'package:task_manager/exceptions/task_range_exceptions.dart';
+import 'package:task_manager/managers/task_manager.dart';
+import 'package:task_manager/managers/task_manager_impl.dart';
 import 'package:test/test.dart';
 
 void main() {
